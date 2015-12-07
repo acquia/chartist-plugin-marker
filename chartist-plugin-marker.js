@@ -19,7 +19,7 @@
         chart.on('draw', function (data) {
 
           var verticalMarker,
-              seriesName = data.series && data.series.name ? data.series.name : '',
+              seriesName = data.series && data.series.name ? data.series.name : null,
               chartHeight = chart.svg.height();
 
           if (options.series.length === 0 || options.series.indexOf(seriesName) !== -1) {
