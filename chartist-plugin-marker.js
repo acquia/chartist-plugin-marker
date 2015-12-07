@@ -19,7 +19,6 @@
         chart.on('draw', function (data) {
 
           var verticalMarker,
-              xAxisValue,
               seriesName = data.series && data.series.name ? data.series.name : '',
               chartHeight = chart.svg.height();
 
