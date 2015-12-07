@@ -22,6 +22,13 @@ var defaultOptions = {
 };
 ```
 
+| __Option__ | __Description__ | __Type__ | __Default__ |
+| ---        | ---             | ---      | ---         |
+| `series` | Array of series names to show as markers. If no series are specified all series will show as markers | `Array` | `[]` |
+| `threshold` | All series Y values above the threshold will be shown. | `number` | `0` |
+| `classNames` | Assign custom class name to series (`markerClass`), points (`markerClassPoint`), and lines (`markerClassLine`) of the marker  | `object` | |
+
+
 ## Sample usage in Chartist.js
 
 ```javascript
