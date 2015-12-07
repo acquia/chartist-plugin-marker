@@ -13,13 +13,12 @@ bower install chartist-plugin-marker --save
 ```javascript
 var defaultOptions = {
   series: [],
+  threshold: 0,
   classNames: {
     markerClass: 'ct-marker',
     markerPointClass: 'ct-marker-point',
-    markerLineClas: 'ct-marker-line'
-  },
-  threshold: 0,
-  keepOriginalPath: false
+    markerLineClass: 'ct-marker-line'
+  }
 };
 ```
 
