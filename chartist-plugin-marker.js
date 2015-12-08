@@ -42,7 +42,7 @@
               // Iterate over values and create vertical markers.
               for (var i = 0, len = data.values.length; i < len; i++) {
 
-                if (data.values[i].y > options.threshold) {
+                if (data.values[i] !== undefined && data.values[i].y > options.threshold) {
 
                   // Create vertical marker line.
                   verticalMarker = Chartist.Svg('line', {
