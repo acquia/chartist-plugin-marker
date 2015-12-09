@@ -28,13 +28,16 @@
             if (data.type === 'point' && data.value.y > options.threshold) {
 
               // Alter the existing marker point position to the bottom of the chart.
-              data.element.attr({
-                y1: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom,
-                y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
-              }).addClass(options.classNames.markerPointClass);
+              data.element
+                .attr({
+                  y1: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom,
+                  y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
+                })
+                .addClass(options.classNames.markerPointClass);
 
+            }
             // Convert existing line area to vertical markers.
-            } else if (data.type === 'line' && data.values.length) {
+            else if (data.type === 'line' && data.values.length) {
 
               // Remove the original line path.
               data.element.remove();
@@ -45,12 +48,14 @@
                 if (data.values[i] !== undefined && data.values[i].y > options.threshold) {
 
                   // Create vertical marker line.
-                  verticalMarker = Chartist.Svg('line', {
-                    x1: data.axisX.projectValue(data.values[i].x, i) + chart.options.axisY.offset + chart.options.chartPadding.left,
-                    y1: 0 + chart.options.chartPadding.top,
-                    x2: data.axisX.projectValue(data.values[i].x, i) + chart.options.axisY.offset + chart.options.chartPadding.left,
-                    y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
-                  }, 'ct-line').addClass(options.classNames.markerLineClass);
+                  verticalMarker = Chartist
+                    .Svg('line', {
+                      x1: data.axisX.projectValue(data.values[i].x, i) + chart.options.axisY.offset + chart.options.chartPadding.left,
+                      y1: 0 + chart.options.chartPadding.top,
+                      x2: data.axisX.projectValue(data.values[i].x, i) + chart.options.axisY.offset + chart.options.chartPadding.left,
+                      y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
+                    }, 'ct-line')
+                    .addClass(options.classNames.markerLineClass);
 
                   // Append vertical markerline to SVG group.
                   data.group.append(verticalMarker);
@@ -58,8 +63,9 @@
                 }
               }
 
+            }
             // Remove all other data except grids and labels.
-            } else if (data.type !== 'grid' && data.type !== 'label') {
+            else if (data.type !== 'grid' && data.type !== 'label') {
               data.element.remove();
             }
 
