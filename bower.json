@@ -1,9 +1,11 @@
 {
   "name": "chartist-plugin-marker",
   "main": "chartist-plugin-marker.js",
+  "version": "0.0.1",
   "homepage": "https://github.com/acquia/chartist-plugin-marker",
   "authors": [
-    "Arvin Singla <arvin.singla@acquia.com>"
+    "Arvin Singla <arvin.singla@acquia.com>",
+    "Al Steffen <al.steffen@acquia.com>"
   ],
   "description": "Chartist.js plugin to display a series of data as vertical markers in a line chart.",
   "moduleType": [],
