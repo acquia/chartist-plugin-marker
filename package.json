@@ -22,12 +22,7 @@
   ],
   "main": "dist/chartist-plugin-marker.js",
   "browser": "dist/chartist-plugin-marker.js",
-  "licenses": [
-    {
-      "type": "WTFPL",
-      "url": "https://github.com/acquia/chartist-plugin-marker/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "chartist": "~0.9.5",
@@ -51,7 +46,7 @@
     "test": "grunt test"
   },
   "config": {
-    "banner": "/* chartist-plugin-marker <%= pkg.version %>\n * Copyright © <%= year %> Arvin Singla\n * Free to use under the WTFPL license.\n * http://www.wtfpl.net/\n */\n",
+    "banner": "/* chartist-plugin-marker <%= pkg.version %>\n * Copyright © <%= year %> Acquia, Inc.\n * Free to use under the MIT license.\n * https://opensource.org/licenses/MIT/\n */\n",
     "src": "src",
     "dist": "dist",
     "tmp": ".tmp",

@@ -9,8 +9,7 @@
   ],
   "description": "Chartist.js plugin to display a series of data as vertical markers in a line chart.",
   "moduleType": [],
-  "license": "WTFPL",
-  "private": true,
+  "license": "MIT",
   "ignore": [
     ".*",
     "Gruntfile.js",

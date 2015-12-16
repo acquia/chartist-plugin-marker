@@ -20,20 +20,44 @@
 
           var verticalMarker,
               seriesName = data.series && data.series.name ? data.series.name : null,
-              chartHeight = chart.svg.height();
+              chartHeight = chart.svg.height(),
+              pointShape = options.pointShape || 'circle';
 
           if (options.series.length === 0 || options.series.indexOf(seriesName) !== -1) {
 
             // Move points to bottom of the charts.
             if (data.type === 'point' && data.value.y > options.threshold) {
 
-              // Alter the existing marker point position to the bottom of the chart.
-              data.element
-                .attr({
-                  y1: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom,
-                  y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
-                })
-                .addClass(options.classNames.markerPointClass);
+              switch (pointShape) {
+
+                case 'triangle':
+                  var triangle = new Chartist.Svg('path', {
+                    d: ['M',
+                      data.x,
+                      (chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom) - 6,
+                      'L',
+                      data.x - 8,
+                      (chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom) + 3,
+                      'L',
+                      data.x + 8,
+                      (chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom) + 3,
+                      'z'].join(' '),
+                    style: 'fill-opacity: 1'
+                  }, 'ct-area');
+                  data.element.replace(triangle).addClass(options.classNames.markerPointClass);
+                  break;
+
+                default:
+                  // Alter the existing marker point position to the bottom of the chart.
+                  data.element
+                    .attr({
+                      y1: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom,
+                      y2: chartHeight - chart.options.axisX.offset - chart.options.chartPadding.bottom
+                    })
+                    .addClass(options.classNames.markerPointClass);
+
+              }
+
 
             }
             // Convert existing line area to vertical markers.
