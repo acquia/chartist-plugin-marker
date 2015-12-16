@@ -26,6 +26,7 @@ var defaultOptions = {
 | ---        | ---             | ---      | ---         |
 | `series` | Array of series names to show as markers. If no series are specified all series will show as markers | `Array` | `[]` |
 | `threshold` | All series Y values above the threshold will be shown. | `number` | `0` |
+| `pointShape` | The shape of the points for the marker. Currently only `circle` and `triangle` are supported. | `string` | `circle` |
 | `classNames` | Assign custom class name to series (`markerClass`), points (`markerClassPoint`), and lines (`markerClassLine`) of the marker  | `object` | |
 
 
