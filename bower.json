@@ -1,6 +1,6 @@
 {
   "name": "chartist-plugin-marker",
-  "main": "chartist-plugin-marker.js",
+  "main": "./dist/chartist-plugin-marker.min.js",
   "version": "0.0.1",
   "homepage": "https://github.com/acquia/chartist-plugin-marker",
   "authors": [
@@ -9,14 +9,16 @@
   ],
   "description": "Chartist.js plugin to display a series of data as vertical markers in a line chart.",
   "moduleType": [],
-  "license": "MIT",
+  "license": "WTFPL",
   "private": true,
   "ignore": [
-    "**/.*",
+    ".*",
+    "Gruntfile.js",
+    "package.json",
     "node_modules",
-    "bower_components",
+    "src",
     "test",
-    "tests"
+    "tasks"
   ],
   "devDependencies": {
     "chartist": "~0.9.5"
