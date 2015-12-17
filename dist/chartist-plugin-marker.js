@@ -37,9 +37,10 @@
             var verticalMarker,
                 seriesName = data.series && data.series.name ? data.series.name : null,
                 chartHeight = chart.svg.height(),
-                pointShape = options.pointShape || 'circle';
+                pointShape = options.pointShape || 'circle',
+                allSeries = options.allSeries || false;
 
-            if (options.series.length === 0 || options.series.indexOf(seriesName) !== -1) {
+            if (allSeries || options.series.indexOf(seriesName) !== -1) {
 
               // Move points to bottom of the charts.
               if (data.type === 'point' && data.value.y > options.threshold) {

@@ -24,7 +24,8 @@ var defaultOptions = {
 
 | __Option__ | __Description__ | __Type__ | __Default__ |
 | ---        | ---             | ---      | ---         |
-| `series` | Array of series names to show as markers. If no series are specified all series will show as markers | `Array` | `[]` |
+| `series` | Array of series names to show as markers. | `Array` | `[]` |
+| `allSeries` | Supercedes `series` option. If set `true` all series will be converted to markers. | `boolean` | `false` |
 | `threshold` | All series Y values above the threshold will be shown. | `number` | `0` |
 | `pointShape` | The shape of the points for the marker. Currently only `circle` and `triangle` are supported. | `string` | `circle` |
 | `classNames` | Assign custom class name to series (`markerClass`), points (`markerClassPoint`), and lines (`markerClassLine`) of the marker  | `object` | |
